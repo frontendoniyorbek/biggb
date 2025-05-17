@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&display=swap');
+
+body {
+	background: #fff;
+}
+
+/* GLOBAL FONT (Syne) */
+body,
+html,
+#root {
+	font-family: 'Syne', sans-serif;
+}
