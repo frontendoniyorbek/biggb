@@ -7,7 +7,6 @@ import serverRacks from '../assets/server-racks.svg';
 import checkIcon from '../assets/check.svg';
 import starIcon from '../assets/star.svg';
 import databaseIcon from '../assets/database.svg';
-import BigDataStatus from './BigDataStatus';
 
 const ControlPanel = () => {
 	useEffect(() => {
@@ -109,7 +108,6 @@ const ControlPanel = () => {
 						</div>
 					</div>
 				</div>
-				<BigDataStatus />
 			</div>
 		</section>
 	);
