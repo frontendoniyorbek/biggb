@@ -13,8 +13,8 @@ const HomePage = () => (
 		<Header />
 		<Hero />
 		<ServerFeatures />
-		{/* <ControlPanel />
-		<Stats />
+		<ControlPanel />
+		{/* <Stats />
 		<Characteristic />
 		<CTA />
 		<Footer /> */}

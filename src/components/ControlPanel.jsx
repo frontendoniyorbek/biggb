@@ -1,6 +1,13 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import freeChat from '../assets/free-chat.svg';
+import realTimeDb from '../assets/real-time-db.svg';
+import serverRacks from '../assets/server-racks.svg';
+import checkIcon from '../assets/check.svg';
+import starIcon from '../assets/star.svg';
+import databaseIcon from '../assets/database.svg';
+import BigDataStatus from './BigDataStatus';
 
 const ControlPanel = () => {
 	useEffect(() => {
@@ -8,53 +15,101 @@ const ControlPanel = () => {
 	}, []);
 
 	return (
-		<section className='mt-20 px-4 sm:px-6 lg:px-16'>
-			<h3 className='text-center text-base sm:text-lg font-bold tracking-widest mb-2' data-aos='fade-down'>
-				QUICK SETUP <span className='font-black'>VPS / VDS</span>
-			</h3>
-			<h2 className='text-2xl sm:text-4xl md:text-5xl text-center font-black mb-10' data-aos='fade-up'>
-				<span className='text-black'>Friendly</span> Control Panel
-			</h2>
-			<div className='flex flex-col md:flex-row items-center gap-6 justify-center'>
-				<div className='bg-white rounded-xl p-6 shadow flex flex-col items-center w-full md:w-60' data-aos='fade-right'>
-					<span className='inline-flex items-center gap-2 mb-2 font-bold text-sm'>
-						<img src='https://img.icons8.com/color/48/000000/chat--v2.png' alt='chat' className='w-6 h-6' />
-						FREE CHAT
-					</span>
+		<section className='pt-5 2xl:pb-12 lg-pb-10 md:pb-8 pb-6  relative'>
+			<div className='mx-auto px-5' style={{ maxWidth: '1523px' }}>
+				<h3
+					className='
+          text-center font-syne uppercase tracking-[0.20em] text-black
+          font-bold xl:mb-12 md:mb-10 sm:mb-8 mb-6
+          text-[24px] leading-[26px]
+          sm:text-[28px] md:text-[32px]
+        '
+					data-aos='fade-down'>
+					QUICK SETUP
+					<span className='font-extrabold'>VPS / VDS</span>
+				</h3>
+
+				<h2
+					className='
+          text-center font-syne xl:mb-[74px] md:mb-9 mb-5  font-extrabold
+          text-[32px] leading-[34px]
+          sm:text-[48px] sm:leading-[40px]
+          md:text-[64px] md:leading-[46px]
+          tracking-[0em]
+        '
+					data-aos='fade-up'>
+					<span className='text-black font-extrabold'>Friendly</span>
+					<span className='font-bold ml-2 text-black'>Control Panel</span>
+				</h2>
+
+				<div className='w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-12 items-center md:mb-24 mb-16'>
+					{/* Left Side */}
+					<div
+						className='flex flex-col items-center lg:items-end  text-center lg:text-right h-3/4 justify-between'
+						data-aos='fade-right'>
+						<div className='mb-10'>
+							<div className='inline-flex items-center gap-3 p-6 rounded-3xl bg-white shadow-md'>
+								<img src={freeChat} alt='Free Chat' className='w-16 h-16' />
+								<span className='font-bold md:text-xl text-base text-black text-left'>
+									FREE <br /> <span className='font-extrabold'>CHAT</span>
+								</span>
+								<div className='relative w-6 h-6 -mt-8'>
+									<img src={serverRacks} alt='Verified' className='w-6 h-6' />
+									<img
+										src={checkIcon}
+										alt='Check'
+										className='w-3 h-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
+									/>
+								</div>
+							</div>
+						</div>
+						<div className='text-right'>
+							<h2 className='font-bold text-3xl md:text-4xl lg:text-[2.5rem] tracking-tight md:mb-12 mb-5'>ONE-CLICK DEPLOY</h2>
+							<p className='max-w-xs md:max-w-sm text-base text-black font-normal text-right leading-6'>
+								Your Ultimate Tool To Conquer Overwhelming Tasks — Break Big Goals Into Small Steps, Check Them Off One By One,
+								And Watch Your Progress Reach 100%
+							</p>
+						</div>
+					</div>
+
+					{/* Center Image */}
+					<div className='flex justify-center items-center' data-aos='zoom-in'>
+						<div className='rounded-[48px]  overflow-hidden flex items-center justify-center'>
+							<img src={databaseIcon} alt='Server Racks' className='object-cover w-full h-full shadow-xl' />
+						</div>
+					</div>
+
+					{/* Right Side */}
+					<div
+						className='flex flex-col items-center lg:items-start text-center lg:text-left h-3/4 justify-between'
+						data-aos='fade-left'>
+						<div className='mb-10'>
+							<div className='inline-flex items-center gap-3 p-6 rounded-3xl bg-white shadow-md'>
+								<img src={starIcon} alt='Star' className='w-6 h-6 -mt-11' />
+								<span className='font-bold capitalize md:text-xl text-base text-black text-right'>
+									real time <br /> <span className='font-extrabold'>database</span>
+								</span>
+								<img src={realTimeDb} alt='Database' className='w-14 h-14' />
+							</div>
+						</div>
+						<div>
+							<h2 className='font-bold text-3xl md:text-4xl lg:text-[2.5rem] tracking-tight md:mb-6 mb-4'>We Build The Future</h2>
+							<div className='text-left text-black text-base font-normal leading-6'>
+								<div className='mb-3'>
+									<span className='font-bold'>+++ Neural Core 4048 GB CPU AI W – Extreme AI Power</span>
+								</div>
+								<ul className='list-disc list-inside space-y-1'>
+									<li>Multi Super App — Social, Marketplace, AI &amp; Fintech</li>
+									<li>
+										Data Center — <span className='font-bold'>1 PB NVMe</span> Ultra-Fast Storage
+									</li>
+									<li>10-100 Gb/S</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div
-					className='bg-gray-100 rounded-2xl shadow-xl p-0 overflow-hidden w-full md:w-60 flex justify-center'
-					data-aos='zoom-in'>
-					<img
-						src='https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=480&q=80'
-						alt='Server'
-						className='w-40 sm:w-60 h-40 sm:h-60 object-cover'
-					/>
-				</div>
-				<div className='bg-white rounded-xl p-6 shadow flex flex-col items-center w-full md:w-60' data-aos='fade-left'>
-					<span className='inline-flex items-center gap-2 font-bold text-sm'>
-						<img src='https://img.icons8.com/color/48/000000/database.png' alt='db' className='w-6 h-6' />
-						Real Time Database
-					</span>
-				</div>
-			</div>
-			<div className='mt-10 grid grid-cols-1 md:grid-cols-2 gap-6'>
-				<div className='bg-white rounded-xl p-6 sm:p-8 shadow flex flex-col items-start' data-aos='fade-up'>
-					<h4 className='font-black text-base sm:text-lg mb-2'>ONE-CLICK DEPLOY</h4>
-					<p className='text-xs sm:text-sm text-gray-500'>
-						Your Ultimate Tool To Conquer Overwhelming Tasks — Break Big Goals into Small Steps. Check Them Off One By One, And
-						Watch Your Progress Reach 100%.
-					</p>
-				</div>
-				<div className='bg-white rounded-xl p-6 sm:p-8 shadow flex flex-col items-start' data-aos='fade-up' data-aos-delay='100'>
-					<h4 className='font-black text-base sm:text-lg mb-2'>We Build The Future</h4>
-					<ul className='text-xs sm:text-sm text-gray-600 list-disc pl-4'>
-						<li>*** Neural Core 4048 GB CPU AI W – Extreme AI Power</li>
-						<li>Multi Sup App — Social, Marketplace, AI & Fintech</li>
-						<li>Data Center — 1 PB NVMe Ultra-Fast Storage</li>
-						<li>10-100 Gb/s</li>
-					</ul>
-				</div>
+				<BigDataStatus />
 			</div>
 		</section>
 	);
