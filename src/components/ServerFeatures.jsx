@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import serverBg from '../assets/server-bg.svg';
@@ -7,6 +7,38 @@ export default function ServerFeatures() {
 	useEffect(() => {
 		AOS.init({ once: true, duration: 900 });
 	}, []);
+
+	// Birinchi variant uchun
+	const [activeCore, setActiveCore] = useState('core');
+	// Ikkinchi variant uchun
+	const [activeGB1, setActiveGB1] = useState('1gb');
+	// Uchinchi variant uchun
+	const [activeGB2, setActiveGB2] = useState('8gb');
+	// To‘rtinchi variant uchun
+	const [activeGB3, setActiveGB3] = useState('1gb2');
+	// Beshinchi variant uchun
+	const [activeData, setActiveData] = useState('get');
+
+	// Classlar
+	const coreGradientClass =
+		'bg-gradient-to-r from-gray-400 to-gray-200 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2';
+	const coreNormalClass = 'font-bold font-syne text-base md:text-lg text-black/90 ml-2';
+
+	const gb1GradientClass =
+		'bg-gradient-to-br from-green-400 to-green-200 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2';
+	const gb1NormalClass = 'font-bold font-syne text-base md:text-lg text-black/90 ml-2';
+
+	const gb2GradientClass =
+		'bg-gradient-to-br from-black to-gray-700 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2';
+	const gb2NormalClass = 'font-bold font-syne text-base md:text-lg text-black/90 ml-2';
+
+	const gb3GradientClass =
+		'bg-gradient-to-br from-lime-300 to-yellow-200 text-black font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2';
+	const gb3NormalClass = 'font-bold font-syne text-base md:text-lg text-black/90 ml-2';
+
+	const dataGradientClass =
+		'bg-gradient-to-br from-cyan-400 to-blue-300 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2 mr-2';
+	const dataNormalClass = 'font-bold font-syne text-base md:text-lg text-black/90 ml-2';
 
 	return (
 		<section
@@ -40,12 +72,6 @@ export default function ServerFeatures() {
 					</h2>
 				</div>
 				<div
-					// style={{
-					// 	backgroundImage: `url(${serverCardBg})`,
-					// 	backgroundRepeat: 'no-repeat',
-					// 	backgroundSize: 'cover'
-					// 	backgroundPosition: 'center',
-					// }}
 					className='
           background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1.5px, transparent 1.5px);background-size: 20px 20px;
           bg-white
@@ -99,11 +125,20 @@ export default function ServerFeatures() {
 								PLATINUM PROCESSOR
 							</span>
 						</span>
+						{/* 1. CORE and 256 GB */}
 						<div className='flex items-center gap-3 bg-white rounded-[102px] shadow-lg px-4 py-3'>
-							<span className='bg-gradient-to-r from-gray-400 to-gray-200 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2'>
+							<span
+								className={activeCore === 'core' ? coreGradientClass : coreNormalClass}
+								onClick={() => setActiveCore('core')}
+								style={{ cursor: 'pointer' }}>
 								1 CORE
 							</span>
-							<span className='font-bold font-syne text-base md:text-lg text-black/90 ml-2'>256 GB</span>
+							<span
+								className={activeCore === 'gb' ? coreGradientClass : coreNormalClass}
+								onClick={() => setActiveCore('gb')}
+								style={{ cursor: 'pointer' }}>
+								256 GB
+							</span>
 						</div>
 					</div>
 					{/* RAM */}
@@ -130,11 +165,20 @@ export default function ServerFeatures() {
 								DDR4 MEMORY
 							</span>
 						</span>
+						{/* 2. 1 GB and 256 GB (green gradient) */}
 						<div className='flex items-center gap-3 bg-white rounded-[40px] shadow-lg px-4 py-3'>
-							<span className='bg-gradient-to-br from-green-400 to-green-200 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2'>
+							<span
+								className={activeGB1 === '1gb' ? gb1GradientClass : gb1NormalClass}
+								onClick={() => setActiveGB1('1gb')}
+								style={{ cursor: 'pointer' }}>
 								1 GB
 							</span>
-							<span className='font-bold font-syne text-base md:text-lg text-black/90 ml-2'>256 GB</span>
+							<span
+								className={activeGB1 === '256gb' ? gb1GradientClass : gb1NormalClass}
+								onClick={() => setActiveGB1('256gb')}
+								style={{ cursor: 'pointer' }}>
+								256 GB
+							</span>
 						</div>
 					</div>
 					{/* NVME */}
@@ -161,11 +205,20 @@ export default function ServerFeatures() {
 								SSD 16 PB
 							</span>
 						</span>
+						{/* 3. 8 GB and 4048 GB (black to gray gradient) */}
 						<div className='flex items-center gap-3 bg-white rounded-[40px] shadow-lg px-4 py-3'>
-							<span className='bg-gradient-to-br from-black to-gray-700 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2'>
+							<span
+								className={activeGB2 === '8gb' ? gb2GradientClass : gb2NormalClass}
+								onClick={() => setActiveGB2('8gb')}
+								style={{ cursor: 'pointer' }}>
 								8 GB
 							</span>
-							<span className='font-bold font-syne text-base md:text-lg text-black/90 ml-2'>4048 GB</span>
+							<span
+								className={activeGB2 === '4048gb' ? gb2GradientClass : gb2NormalClass}
+								onClick={() => setActiveGB2('4048gb')}
+								style={{ cursor: 'pointer' }}>
+								4048 GB
+							</span>
 						</div>
 					</div>
 					{/* GPU */}
@@ -192,11 +245,20 @@ export default function ServerFeatures() {
 								AI + GAME
 							</span>
 						</span>
+						{/* 4. 1 GB and 256 GB (lime-yellow gradient, black text) */}
 						<div className='flex items-center gap-3 bg-white rounded-[40px] shadow-lg px-4 py-3'>
-							<span className='bg-gradient-to-br from-lime-300 to-yellow-200 text-black font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2'>
+							<span
+								className={activeGB3 === '1gb2' ? gb3GradientClass : gb3NormalClass}
+								onClick={() => setActiveGB3('1gb2')}
+								style={{ cursor: 'pointer' }}>
 								1 GB
 							</span>
-							<span className='font-bold font-syne text-base md:text-lg text-black/90 ml-2'>256 GB</span>
+							<span
+								className={activeGB3 === '256gb2' ? gb3GradientClass : gb3NormalClass}
+								onClick={() => setActiveGB3('256gb2')}
+								style={{ cursor: 'pointer' }}>
+								256 GB
+							</span>
 						</div>
 					</div>
 
@@ -232,11 +294,20 @@ export default function ServerFeatures() {
               '>
 							VPS / VDS
 						</span>
+						{/* 5. GET and BIG DATA (cyan-blue gradient) */}
 						<div className='flex w-full items-center bg-white rounded-[40px] shadow-lg px-4 py-3'>
-							<span className='bg-gradient-to-br from-cyan-400 to-blue-300 text-white font-bold font-syne text-lg md:text-xl rounded-[32px] px-5 py-2 mr-2'>
+							<span
+								className={activeData === 'get' ? dataGradientClass : dataNormalClass}
+								onClick={() => setActiveData('get')}
+								style={{ cursor: 'pointer' }}>
 								GET
 							</span>
-							<span className='font-bold font-syne text-base md:text-lg text-black/90 ml-2'>BIG DATA</span>
+							<span
+								className={activeData === 'bigdata' ? dataGradientClass : dataNormalClass}
+								onClick={() => setActiveData('bigdata')}
+								style={{ cursor: 'pointer' }}>
+								BIG DATA
+							</span>
 						</div>
 					</div>
 				</div>
