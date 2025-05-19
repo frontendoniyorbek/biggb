@@ -14,7 +14,6 @@ const BigDataStatus = () => {
 		<section
 			className='
         w-full flex justify-center items-center
-
       '
 			data-aos='fade-up'>
 			<div
@@ -23,9 +22,9 @@ const BigDataStatus = () => {
           bg-white
           rounded-[56px]
           shadow-[0px_0px_25px_0px_rgba(0,0,0,0.04)]
+          md:py-[86px] py-9  px-8 sm:px-16 md:px-28
           flex flex-col md:flex-row
           justify-between items-center
-          md:py-[86px] py-9  px-8 sm:px-16 md:px-28
           relative
           overflow-x-hidden
         '

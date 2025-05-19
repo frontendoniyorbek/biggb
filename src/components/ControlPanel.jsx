@@ -73,8 +73,8 @@ const ControlPanel = () => {
 
 					{/* Center Image */}
 					<div className='flex justify-center items-center' data-aos='zoom-in'>
-						<div className='rounded-[48px]  overflow-hidden flex items-center justify-center'>
-							<img src={databaseIcon} alt='Server Racks' className='object-cover w-full h-full shadow-xl' />
+						<div className='rounded-[48px]  overflow-hidden flex items-center justify-center bg-white shadow-[0px_0px_25px_0px_#0000000D] p-5'>
+							<img src={databaseIcon} alt='Server Racks' className='object-cover w-full h-full rounded-[48px]' />
 						</div>
 					</div>
 

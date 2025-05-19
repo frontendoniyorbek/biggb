@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import serverBg from '../assets/server-bg.svg';
-import serverCardBg from '../assets/server-card-bg.svg';
 
 export default function ServerFeatures() {
 	useEffect(() => {
@@ -23,31 +22,34 @@ export default function ServerFeatures() {
 				<div className='text-center xl:text-right xl:mb-8 md:mb-6 mb-4 relative z-10' data-aos='fade-down'>
 					<h2
 						className='
-          font-bold
-          font-syne
-          uppercase
-          tracking-[0.04em]
-          text-[32px] leading-[36px]
-          xs:text-[38px] xs:leading-[40px]
-          sm:text-[48px] sm:leading-[48px]
-          md:text-[72px] md:leading-[60px]
-          lg:text-[90px] lg:leading-[70px]
-          xl:text-[100px] xl:leading-[77px]
-          mb-4
-          w-full
-          text-center md:text-right
-        '>
+            font-bold
+            font-syne
+            uppercase
+            tracking-[0.04em]
+            text-[32px] leading-[36px]
+            xs:text-[38px] xs:leading-[40px]
+            sm:text-[48px] sm:leading-[48px]
+            md:text-[72px] md:leading-[60px]
+            lg:text-[90px] lg:leading-[70px]
+            xl:text-[100px] xl:leading-[77px]
+            mb-4
+            w-full
+            text-center md:text-right
+          '>
 						SERVER
 					</h2>
 				</div>
 				<div
-					style={{
-						backgroundImage: `url(${serverCardBg})`,
-						backgroundRepeat: 'no-repeat',
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
-					}}
+					// style={{
+					// 	backgroundImage: `url(${serverCardBg})`,
+					// 	backgroundRepeat: 'no-repeat',
+					// 	backgroundSize: 'cover'
+					// 	backgroundPosition: 'center',
+					// }}
 					className='
+          background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1.5px, transparent 1.5px);background-size: 20px 20px;
+          bg-white
+          shadow-[0px_0px_25px_0px_rgba(0,0,0,0.04)]
           grid
           grid-cols-1
           md:grid-cols-2
